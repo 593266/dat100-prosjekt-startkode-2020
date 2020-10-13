@@ -14,6 +14,6 @@ public class TODO {
 				
 	   return "Konstruktøren for klassen " + className + " er ikke implementert";
 		
-	}
+	}	
 
 }

@@ -13,29 +13,26 @@ public class GPSDataConverter {
 	private static int TIME_STARTINDEX = 11; // startindex for tidspunkt i timestr
 
 	public static int toSeconds(String timestr) {
-		
-		int secs;
-		int hr, min, sec;
-		
-		// TODO
-		// OPPGAVE - START
-		
-		throw new UnsupportedOperationException(TODO.method());
+		int secs = Integer.parseInt(timestr.substring(17,19));
+		int min = Integer.parseInt(timestr.substring(14,16));	
+		int hr = Integer.parseInt(timestr.substring(11,13));
 
-		// OPPGAVE - SLUTT
+		int sumSec = secs + (min * 60) + (hr * 60 *60);
+		return sumSec;
 		
 	}
 
+
 	public static GPSPoint convert(String timeStr, String latitudeStr, String longitudeStr, String elevationStr) {
+		int time = toSeconds(timeStr);
+		double latitude = Double.parseDouble(latitudeStr);
+		double longitude = Double.parseDouble(longitudeStr);
+		double elevation = Double.parseDouble(elevationStr);
 
-		GPSPoint gpspoint;
+		GPSPoint gpspoint = new GPSPoint(time, latitude, longitude, elevation);
+	
+	return gpspoint;
 
-		// TODO - START ;
-		
-		throw new UnsupportedOperationException(TODO.method());
-
-		// OPPGAVE - SLUTT ;
-	    
 	}
 	
 }
